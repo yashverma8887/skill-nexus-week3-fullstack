@@ -1,0 +1,114 @@
+{
+  "info": {
+    "_postman_id": "skill-nexus-week-3-collection",
+    "name": "Skill Nexus - Week 3 Full Stack API Collection",
+    "description": "Complete API testing collection for Skill Nexus Internship Week 3 (Full Stack Integration & Multer).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Assignment 1 - Full Stack To-Do API",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": { "raw": "http://localhost:5001/api/auth/register", "protocol": "http", "host": ["localhost"], "port": "5001", "path": ["api", "auth", "register"] }
+          }
+        },
+        {
+          "name": "Login User",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"john@example.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": { "raw": "http://localhost:5001/api/auth/login", "protocol": "http", "host": ["localhost"], "port": "5001", "path": ["api", "auth", "login"] }
+          }
+        },
+        {
+          "name": "Get User Profile",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{todo_jwt_token}}" }],
+            "url": { "raw": "http://localhost:5001/api/auth/me", "protocol": "http", "host": ["localhost"], "port": "5001", "path": ["api", "auth", "me"] }
+          }
+        },
+        {
+          "name": "Get Todos",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{todo_jwt_token}}" }],
+            "url": { "raw": "http://localhost:5001/api/todos", "protocol": "http", "host": ["localhost"], "port": "5001", "path": ["api", "todos"] }
+          }
+        },
+        {
+          "name": "Create Todo",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{todo_jwt_token}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Complete Week 3 Full Stack Submission\",\n  \"description\": \"Integrate React with Express and Multer\",\n  \"priority\": \"high\",\n  \"dueDate\": \"2026-10-01\"\n}"
+            },
+            "url": { "raw": "http://localhost:5001/api/todos", "protocol": "http", "host": ["localhost"], "port": "5001", "path": ["api", "todos"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Assignment 2 - Image Upload API (Multer)",
+      "item": [
+        {
+          "name": "Get All Uploaded Images",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://localhost:5002/api/upload", "protocol": "http", "host": ["localhost"], "port": "5002", "path": ["api", "upload"] }
+          }
+        },
+        {
+          "name": "Upload Single Image",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [{ "key": "image", "type": "file", "src": "" }]
+            },
+            "url": { "raw": "http://localhost:5002/api/upload/single", "protocol": "http", "host": ["localhost"], "port": "5002", "path": ["api", "upload", "single"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Mini Project - Task Manager API",
+      "item": [
+        {
+          "name": "Get Task Stats",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{task_jwt_token}}" }],
+            "url": { "raw": "http://localhost:5003/api/tasks/stats", "protocol": "http", "host": ["localhost"], "port": "5003", "path": ["api", "tasks", "stats"] }
+          }
+        },
+        {
+          "name": "Get Filtered Tasks",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{task_jwt_token}}" }],
+            "url": { "raw": "http://localhost:5003/api/tasks?status=all&priority=all&category=all", "protocol": "http", "host": ["localhost"], "port": "5003", "path": ["api", "tasks"], "query": [{ "key": "status", "value": "all" }, { "key": "priority", "value": "all" }, { "key": "category", "value": "all" }] }
+          }
+        }
+      ]
+    }
+  ]
+}
