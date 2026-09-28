@@ -1,0 +1,26 @@
+{
+  "name": "skill-nexus-week3-fullstack",
+  "version": "1.0.0",
+  "description": "Skill Nexus Internship Week 3 - Full Stack Integration (React, Express, MongoDB, Multer)",
+  "private": true,
+  "scripts": {
+    "start:todo-backend": "cd assignment-1-fullstack-todo/backend && npm start",
+    "start:todo-frontend": "cd assignment-1-fullstack-todo/frontend && npm run dev",
+    "start:upload-backend": "cd assignment-2-image-upload/backend && npm start",
+    "start:upload-frontend": "cd assignment-2-image-upload/frontend && npm run dev",
+    "start:taskmanager-backend": "cd mini-project-task-manager/backend && npm start",
+    "start:taskmanager-frontend": "cd mini-project-task-manager/frontend && npm run dev"
+  },
+  "keywords": [
+    "mern",
+    "fullstack",
+    "react",
+    "express",
+    "mongodb",
+    "multer",
+    "jwt",
+    "axios"
+  ],
+  "author": "Skill Nexus Intern",
+  "license": "MIT"
+}
